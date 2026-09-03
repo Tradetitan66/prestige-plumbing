@@ -1,5 +1,5 @@
 import {
-  ClockIcon,
+  GaugeIcon,
   ShieldIcon,
   ChatIcon,
   PinIcon,
@@ -8,7 +8,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const benefits = [
   {
-    icon: ClockIcon,
+    icon: GaugeIcon,
     title: "Fast Response",
     description:
       "Reliable local service when you need help.",
