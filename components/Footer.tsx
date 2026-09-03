@@ -14,7 +14,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-ink text-white">
-      <div className="mx-auto max-w-6xl px-4 pb-28 pt-14 sm:px-6 lg:px-8 lg:pb-14">
+      <div className="container-site pb-28 pt-14 lg:pb-14">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-2.5">
@@ -120,7 +120,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Prestige Plumbing Heating on Instagram"
-                className="grid h-11 w-11 place-items-center rounded-lg border border-white/15 text-white/80 transition-colors hover:border-brand-orange hover:text-brand-orange"
+                className="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-brand-orange hover:text-brand-orange"
               >
                 <InstagramIcon className="h-5 w-5" />
               </a>
@@ -129,7 +129,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Prestige Plumbing Heating on Facebook"
-                className="grid h-11 w-11 place-items-center rounded-lg border border-white/15 text-white/80 transition-colors hover:border-brand-blue hover:text-brand-blue"
+                className="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-brand-blue hover:text-brand-blue"
               >
                 <FacebookIcon className="h-5 w-5" />
               </a>
@@ -138,7 +138,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Prestige Plumbing Heating on Yell"
-                className="grid h-11 w-11 place-items-center rounded-lg border border-white/15 text-white/80 transition-colors hover:border-brand-blue hover:text-brand-blue"
+                className="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-brand-blue hover:text-brand-blue"
               >
                 <YellIcon className="h-5 w-5" />
               </a>

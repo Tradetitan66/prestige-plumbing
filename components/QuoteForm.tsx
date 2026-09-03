@@ -113,52 +113,77 @@ export default function QuoteForm() {
   }
 
   const inputClass = (invalid?: string) =>
-    `w-full rounded-lg border bg-white px-3.5 py-3 text-sm text-ink shadow-sm outline-none transition-colors placeholder:text-ink-muted/70 focus:ring-2 focus:ring-brand-blue/40 ${
+    `w-full rounded-xl border bg-white px-3.5 py-3 text-sm text-ink shadow-sm outline-none transition-colors placeholder:text-ink-muted/70 focus:ring-2 focus:ring-brand-blue/40 ${
       invalid
         ? "border-red-400 focus:border-red-400"
-        : "border-black/15 focus:border-brand-blue"
+        : "border-line focus:border-brand-blue"
     }`;
 
   return (
-    <section id="contact" className="bg-mist py-16 sm:py-20 lg:py-24">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
-        <ScrollReveal className="lg:col-span-5">
-          <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+    <section id="contact" className="scroll-mt-24 py-12 sm:py-16 lg:py-20">
+      <div className="container-site">
+        <ScrollReveal className="relative isolate overflow-hidden rounded-[32px] bg-gradient-to-br from-brand-blue via-brand-blue to-brand-blue-deep px-6 py-10 sm:px-10 sm:py-14 lg:px-14">
+          {/* watermark */}
+          <div
+            className="pointer-events-none absolute -right-14 -bottom-14 text-white/10"
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-80 w-80">
+              <path d="M12 2.7S6 9.5 6 14a6 6 0 0 0 12 0c0-4.5-6-11.3-6-11.3z" />
+            </svg>
+          </div>
+
+          <div className="relative grid items-start gap-10 lg:grid-cols-12 lg:gap-14">
+        <div className="lg:col-span-5">
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white backdrop-blur">
+            Get a quote
+          </p>
+          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Tell us what you need
           </h2>
-          <p className="mt-3 text-base leading-relaxed text-ink-muted sm:text-lg">
-            Send us a few details and we&apos;ll continue the conversation on
+          <p className="mt-4 max-w-md text-base leading-relaxed text-white/85 sm:text-lg">
+            Send a few details and continue the conversation directly on
             WhatsApp.
           </p>
-          <div className="mt-6 flex flex-col gap-3">
+          <div className="mt-8 flex flex-col gap-4">
             <a
               href={site.phoneHref}
-              className="inline-flex items-center gap-2 text-base font-semibold text-ink transition-colors hover:text-brand-blue"
+              className="inline-flex items-center gap-3 text-base font-semibold text-white transition-colors hover:text-white/90"
             >
-              <span className="grid h-10 w-10 place-items-center rounded-lg bg-brand-blue-soft text-brand-blue">
+              <span className="grid h-11 w-11 place-items-center rounded-full bg-white text-brand-blue">
                 <PhoneIcon className="h-5 w-5" />
               </span>
-              {site.phoneDisplay}
+              <span>
+                Call us
+                <span className="block text-sm font-normal text-white/80">
+                  {site.phoneDisplay}
+                </span>
+              </span>
             </a>
             <a
               href={site.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-base font-semibold text-ink transition-colors hover:text-emerald-700"
+              className="inline-flex items-center gap-3 text-base font-semibold text-white transition-colors hover:text-white/90"
             >
-              <span className="grid h-10 w-10 place-items-center rounded-lg bg-emerald-100 text-emerald-700">
+              <span className="grid h-11 w-11 place-items-center rounded-full bg-white text-emerald-600">
                 <WhatsAppIcon className="h-5 w-5" />
               </span>
-              WhatsApp us directly
+              <span>
+                WhatsApp us directly
+                <span className="block text-sm font-normal text-white/80">
+                  Quick messages welcome
+                </span>
+              </span>
             </a>
           </div>
-        </ScrollReveal>
+        </div>
 
-        <ScrollReveal className="lg:col-span-7" delay={80}>
+        <div className="lg:col-span-7">
           <form
             onSubmit={handleSubmit}
             noValidate
-            className="overflow-hidden rounded-2xl border border-black/8 bg-white shadow-sm"
+            className="overflow-hidden rounded-[24px] bg-white shadow-[0_24px_60px_-24px_rgba(8,20,40,0.5)]"
           >
             <div className="space-y-5 p-6 sm:p-8">
               <div className="grid gap-5 sm:grid-cols-2">
@@ -331,10 +356,10 @@ export default function QuoteForm() {
               </div>
             </div>
 
-            <div className="border-t border-black/8 bg-mist/60 px-6 py-5 sm:px-8">
+            <div className="border-t border-line bg-soft px-6 py-5 sm:px-8">
               <button
                 type="submit"
-                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-emerald-600 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-900/20 transition-colors hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2"
+                className="inline-flex h-[52px] w-full items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 text-base font-bold text-white shadow-lg shadow-emerald-900/20 transition-colors hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2"
               >
                 <WhatsAppIcon className="h-5 w-5" />
                 Send via WhatsApp
@@ -345,7 +370,9 @@ export default function QuoteForm() {
               </p>
             </div>
           </form>
-        </ScrollReveal>
+        </div>
+        </div>
+      </ScrollReveal>
       </div>
     </section>
   );

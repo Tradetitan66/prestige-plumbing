@@ -1,91 +1,62 @@
 import { site } from "@/data/site";
-import { PinIcon, CheckIcon } from "@/components/Icons";
+import { WhatsAppIcon, PinIcon, CheckIcon } from "@/components/Icons";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function ServiceArea() {
   return (
-    <section className="bg-paper py-16 sm:py-20 lg:py-24">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
-        <ScrollReveal>
-          <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-            Local plumbing &amp; heating
-          </h2>
-          <p className="mt-4 max-w-lg text-base leading-relaxed text-ink-muted sm:text-lg">
-            Based in Penicuik and serving customers across Edinburgh,
-            Midlothian and surrounding areas. A local, personal service — no
-            call centres, no fuss.
-          </p>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-            {site.areas.map((area) => (
-              <li
-                key={area}
-                className="inline-flex items-center gap-2 text-sm font-medium text-ink"
-              >
-                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-blue-soft text-brand-blue">
-                  <CheckIcon className="h-3.5 w-3.5" />
-                </span>
-                {area}
-              </li>
-            ))}
-          </ul>
-        </ScrollReveal>
-
-        <ScrollReveal delay={80}>
+    <section className="py-12 sm:py-16 lg:py-20">
+      <div className="container-site">
+        <ScrollReveal className="relative isolate overflow-hidden rounded-[32px] bg-gradient-to-br from-brand-blue via-brand-blue to-brand-blue-deep px-6 py-12 text-center sm:px-10 sm:py-16">
           <div
-            className="relative overflow-hidden rounded-2xl border border-black/8 bg-mist p-6 sm:p-8"
-            role="img"
-            aria-label="Map of the service area around Penicuik, with Edinburgh, Midlothian and surrounding areas marked"
+            className="pointer-events-none absolute -left-16 -top-16 text-white/10"
+            aria-hidden="true"
           >
-            <svg
-              viewBox="0 0 400 300"
-              className="h-auto w-full text-brand-blue"
-              aria-hidden="true"
-            >
-              {/* stylised roads */}
-              <path
-                d="M-20 60 C 90 70 160 90 250 120 S 400 130 440 160"
-                stroke="currentColor"
-                strokeOpacity="0.18"
-                strokeWidth="10"
-                fill="none"
-              />
-              <path
-                d="M40 -20 C 60 70 110 140 180 200 S 260 300 300 330"
-                stroke="currentColor"
-                strokeOpacity="0.18"
-                strokeWidth="10"
-                fill="none"
-              />
-              <path
-                d="M180 200 C 220 220 300 230 420 240"
-                stroke="currentColor"
-                strokeOpacity="0.12"
-                strokeWidth="6"
-                fill="none"
-              />
-              {/* dotted outline area */}
-              <path
-                d="M120 60 C 300 30 380 120 360 230 C 340 330 180 330 90 260 C 20 200 40 110 120 60 Z"
-                stroke="currentColor"
-                strokeOpacity="0.35"
-                strokeDasharray="5 6"
-                strokeWidth="2"
-                fill="currentColor"
-                fillOpacity="0.04"
-              />
-              {/* pins */}
-              <circle cx="150" cy="150" r="7" fill="#e96a1f" />
-              <circle cx="150" cy="150" r="14" fill="#e96a1f" fillOpacity="0.25" />
-              <circle cx="300" cy="90" r="5" fill="#1d5fbf" />
-              <circle cx="300" cy="90" r="12" fill="#1d5fbf" fillOpacity="0.2" />
-              <circle cx="90" cy="250" r="5" fill="#1d5fbf" />
-              <circle cx="90" cy="250" r="12" fill="#1d5fbf" fillOpacity="0.2" />
-              <circle cx="320" cy="210" r="5" fill="#1d5fbf" />
-              <circle cx="320" cy="210" r="12" fill="#1d5fbf" fillOpacity="0.2" />
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-64 w-64">
+              <path d="M12 21s7-5.1 7-11a7 7 0 0 0-14 0c0 5.9 7 11 7 11z" />
+              <circle cx="12" cy="10" r="2.5" />
             </svg>
-            <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-ink">
-              <PinIcon className="h-5 w-5 text-brand-orange" />
-              Penicuik, Midlothian
+          </div>
+
+          <div className="relative mx-auto max-w-2xl">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white backdrop-blur">
+              <PinIcon className="h-4 w-4" />
+              Service area
+            </p>
+            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+              Need a plumber in your area?
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-white/85 sm:text-lg">
+              Serving Penicuik, Edinburgh, Midlothian and surrounding areas.
+            </p>
+
+            <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+              {site.areas.map((area) => (
+                <li
+                  key={area}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-white/90"
+                >
+                  <CheckIcon className="h-4 w-4 text-white" />
+                  {area}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href="#contact"
+                className="inline-flex h-[52px] items-center justify-center gap-2 rounded-full bg-white px-8 text-base font-bold text-brand-blue shadow-lg shadow-blue-950/20 transition-transform hover:-translate-y-0.5"
+              >
+                Check Availability
+              </a>
+              <a
+                href={site.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-[52px] items-center justify-center gap-2 rounded-full bg-emerald-600 px-8 text-base font-bold text-white shadow-lg shadow-emerald-900/30 transition-transform hover:-translate-y-0.5"
+              >
+                <WhatsAppIcon className="h-5 w-5" />
+                WhatsApp Us
+              </a>
             </div>
           </div>
         </ScrollReveal>

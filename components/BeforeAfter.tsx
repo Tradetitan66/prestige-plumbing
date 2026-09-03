@@ -14,7 +14,7 @@ export default function BeforeAfter({
   const [pos, setPos] = useState(50);
 
   return (
-    <figure className="group relative aspect-[4/5] overflow-hidden rounded-xl bg-mist">
+    <figure className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-line bg-mist shadow-card">
       {/* AFTER (base layer) */}
       <Image
         src={project.after}
@@ -39,10 +39,10 @@ export default function BeforeAfter({
       </div>
 
       {/* Labels */}
-      <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+      <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white backdrop-blur">
         Before
       </span>
-      <span className="pointer-events-none absolute right-3 top-3 rounded-full bg-brand-orange px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+      <span className="pointer-events-none absolute right-3 top-3 rounded-full bg-brand-orange px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
         After
       </span>
 

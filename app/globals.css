@@ -3,18 +3,26 @@
 @theme {
   --color-ink: #0b0b0d;
   --color-ink-soft: #1c1d21;
-  --color-ink-muted: #6b6f76;
+  --color-ink-muted: #5b616b;
   --color-paper: #ffffff;
-  --color-mist: #f4f5f7;
+  --color-mist: #f4f6f9;
   --color-mist-deep: #eceef1;
+  --color-soft: #f5f8fc;
+  --color-line: #e7ebf1;
 
   --color-brand-blue: #1d5fbf;
   --color-brand-blue-dark: #154a97;
-  --color-brand-blue-soft: #eaf1fb;
+  --color-brand-blue-deep: #0e3a7a;
+  --color-brand-blue-soft: #e7f0fb;
 
   --color-brand-orange: #e96a1f;
   --color-brand-orange-dark: #c85412;
   --color-brand-orange-soft: #fdf0e6;
+
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.04),
+    0 8px 24px -12px rgba(16, 24, 40, 0.12);
+  --shadow-card-hover: 0 4px 8px rgba(16, 24, 40, 0.04),
+    0 16px 40px -16px rgba(16, 24, 40, 0.18);
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
@@ -29,11 +37,46 @@ html {
 }
 
 body {
-  background: var(--color-paper);
+  background: var(--color-soft);
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+.container-site {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 640px) {
+  .container-site {
+    padding-inline: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container-site {
+    padding-inline: 2rem;
+  }
+}
+
+/* Consistent pill / card primitives */
+.card {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-card);
+}
+
+.btn-pill {
+  border-radius: 999px;
+}
+
+.h1-display {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
 }
 
 /* Subtle reveal (fade + rise). Disabled for reduced motion. */

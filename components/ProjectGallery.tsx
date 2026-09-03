@@ -5,10 +5,13 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function ProjectGallery() {
   return (
-    <section id="our-work" className="bg-mist py-16 sm:py-20 lg:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section id="our-work" className="scroll-mt-24 bg-paper py-16 sm:py-20 lg:py-28">
+      <div className="container-site">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+          <p className="inline-flex items-center gap-2 rounded-full bg-brand-orange-soft px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-orange">
+            Our Work
+          </p>
+          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
             Real work. Real results.
           </h2>
           <p className="mt-3 text-base text-ink-muted sm:text-lg">
@@ -17,7 +20,7 @@ export default function ProjectGallery() {
           </p>
         </ScrollReveal>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3">
           {projects.map((project, i) => (
             <ScrollReveal key={project.id} delay={(i % 3) * 60}>
               <BeforeAfter project={project} priority={i < 3} />
@@ -26,15 +29,13 @@ export default function ProjectGallery() {
         </div>
 
         {sampleProjects.length > 0 ? (
-          <ScrollReveal className="mt-12">
-            <h3 className="text-xl font-semibold text-ink">
-              More recent work
-            </h3>
-            <div className="mt-5 grid gap-5 sm:grid-cols-3">
+          <ScrollReveal className="mt-14">
+            <h3 className="text-xl font-bold text-ink">More recent work</h3>
+            <div className="mt-6 grid gap-6 sm:grid-cols-3">
               {sampleProjects.map((img) => (
                 <div
                   key={img.src}
-                  className="relative aspect-[4/5] overflow-hidden rounded-xl bg-white"
+                  className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-line bg-white shadow-card"
                 >
                   <Image
                     src={img.src}
@@ -42,7 +43,7 @@ export default function ProjectGallery() {
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     loading="lazy"
-                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
               ))}
