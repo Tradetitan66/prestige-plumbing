@@ -51,9 +51,7 @@ export default function Hero() {
                   Call Now
                 </a>
                 <a
-                  href={site.whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contact"
                   className="inline-flex h-[52px] items-center justify-center gap-2 rounded-full border border-white/35 px-8 text-base font-semibold text-white backdrop-blur transition-colors hover:bg-white/10"
                 >
                   <WhatsAppIcon className="h-5 w-5 text-emerald-300" />

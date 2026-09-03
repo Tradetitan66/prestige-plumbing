@@ -16,9 +16,7 @@ export default function TopBar() {
           </a>
         </p>
         <a
-          href={site.whatsappHref}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#contact"
           className="hidden items-center gap-1.5 text-xs font-medium text-white/85 transition-colors hover:text-white sm:inline-flex sm:text-sm"
         >
           <WhatsAppIcon className="h-4 w-4 text-brand-orange" />

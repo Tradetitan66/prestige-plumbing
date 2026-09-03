@@ -161,18 +161,16 @@ export default function QuoteForm() {
               </span>
             </a>
             <a
-              href={site.whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#q-name"
               className="inline-flex items-center gap-3 text-base font-semibold text-white transition-colors hover:text-white/90"
             >
               <span className="grid h-11 w-11 place-items-center rounded-full bg-white text-emerald-600">
                 <WhatsAppIcon className="h-5 w-5" />
               </span>
               <span>
-                WhatsApp us directly
+                Send via the form below
                 <span className="block text-sm font-normal text-white/80">
-                  Quick messages welcome
+                  Your details prefill the WhatsApp message
                 </span>
               </span>
             </a>

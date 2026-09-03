@@ -40,9 +40,7 @@ export default function FinalCTA() {
                   Call {site.phoneDisplay}
                 </a>
                 <a
-                  href={site.whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contact"
                   className="inline-flex h-[52px] w-full items-center justify-center gap-2 rounded-full bg-brand-blue px-8 text-base font-bold text-white shadow-lg shadow-blue-950/40 transition-transform hover:-translate-y-0.5 sm:w-auto"
                 >
                   <WhatsAppIcon className="h-5 w-5" />

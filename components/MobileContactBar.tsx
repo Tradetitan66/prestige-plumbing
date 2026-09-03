@@ -18,9 +18,7 @@ export default function MobileContactBar() {
           Call
         </a>
         <a
-          href={site.whatsappHref}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#contact"
           className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-emerald-700"
         >
           <WhatsAppIcon className="h-4 w-4" />

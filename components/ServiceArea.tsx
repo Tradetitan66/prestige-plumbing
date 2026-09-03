@@ -49,9 +49,7 @@ export default function ServiceArea() {
                 Check Availability
               </a>
               <a
-                href={site.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 className="inline-flex h-[52px] items-center justify-center gap-2 rounded-full bg-emerald-600 px-8 text-base font-bold text-white shadow-lg shadow-emerald-900/30 transition-transform hover:-translate-y-0.5"
               >
                 <WhatsAppIcon className="h-5 w-5" />

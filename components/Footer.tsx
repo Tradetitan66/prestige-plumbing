@@ -98,9 +98,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={site.whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contact"
                   className="inline-flex items-center gap-2 text-white/80 transition-colors hover:text-white"
                 >
                   <WhatsAppIcon className="h-4 w-4 text-emerald-300" />
